@@ -1,0 +1,28 @@
+---
+title: "My First Website"
+execute: 
+  echo: false
+---
+
+```{r}
+library(tidyverse)
+library(tidyr)
+library(dplyr)
+
+#| label: diamonds-plot
+#| echo: false
+charts <- read_csv("~/Desktop/FinalWebsite-main/data/charts.csv")
+```
+
+```{r}
+
+library(tidyverse)
+library(tidyr)
+library(dplyr)
+
+charts |>
+  filter(rank < 10) |>
+  ggplot(aes(x = artist, y = song)) +
+  geom_boxplot() 
+  
+```
