@@ -7,6 +7,9 @@ editor: visual
 ```{r setup, include=FALSE}
 library(tidyverse)
 library(readr)
+library(forcats)
+library(patchwork)
+library(gridExtra)
 charts <- read_csv("~/Desktop/final_project1/data/charts.csv")
 
 
@@ -41,7 +44,7 @@ charts %>%
   scale_y_reverse() +
   labs(title = "Rank Distribution for Top 5 Artists",
        x = "Artist", y = "Rank") +
-  theme_minimal()
+  theme(legend.position = "none",axis.text.x = element_text(angle = 75,hjust = 1))
 
 
 
@@ -53,19 +56,21 @@ charts %>%
 #| echo: false
 top_artists <- charts %>%
   count(artist, sort = TRUE) %>%
-  slice_max(n, n = 10) %>%
-  pull(artist)
+  slice_max(n, n = 10)
 
-charts %>%
-  filter(artist %in% top_artists) %>%
-  ggplot(aes(x = artist, y = rank, fill = artist,color = artist)) +
+violin_plot <- charts %>%
+  filter(artist %in% top_artists$artist) %>%
+  mutate(artist = fct_reorder(artist, rank, .fun = median)) %>%
+  ggplot(aes(x = artist, y = rank, fill = artist, color = artist)) +
   geom_violin(trim = FALSE) +
   scale_y_reverse() +
-  labs(
-    title = "Rank Distribution of Top 10 Artists",
-    x = "Artist", y = "Rank"
-  ) +
+  labs(title = "Rank Distribution of Top 10 Artists", x = "Artist", y = "Rank") +
   theme_minimal() +
-  theme(legend.position = "none")
+  theme(legend.position = "none",axis.text.x = element_text(angle = 75,hjust = 1))
+
+artist_table <- tableGrob(data.frame(Artist = top_artists$artist))
+
+violin_plot + inset_element(artist_table, left = 1.05, bottom = 0, right = 1.4, top = 5)
+
 
 ```
