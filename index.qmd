@@ -11,6 +11,7 @@ charts <- read_csv("~/Desktop/final_project1/data/charts.csv")
 
 
 ```
+
 ```{r}
 #| echo: false
 
@@ -25,7 +26,6 @@ charts %>%
   theme_minimal()
 
 ```
-
 
 ```{r}
 #| echo: false
@@ -46,16 +46,26 @@ charts %>%
 
 
 ```
+
+![](http://127.0.0.1:12055/chunk_output/B3C0879B968d8387/4C9A947E/cav7nlmeknx41/00002f.png)
+
 ```{r}
 #| echo: false
+top_artists <- charts %>%
+  count(artist, sort = TRUE) %>%
+  slice_max(n, n = 10) %>%
+  pull(artist)
+
 charts %>%
-  filter(song == "Poker Face") %>%
-  ggplot(aes(x = as.Date(date), y = rank)) +
-  geom_line(color = "darkgreen", linewidth = 1) +
+  filter(artist %in% top_artists) %>%
+  ggplot(aes(x = artist, y = rank, fill = artist,color = artist)) +
+  geom_violin(trim = FALSE) +
   scale_y_reverse() +
-  labs(title = "Chart Rank Over Time: Poker Face",
-       x = "Date", y = "Rank") +
-  theme_light()
+  labs(
+    title = "Rank Distribution of Top 10 Artists",
+    x = "Artist", y = "Rank"
+  ) +
+  theme_minimal() +
+  theme(legend.position = "none")
 
 ```
-

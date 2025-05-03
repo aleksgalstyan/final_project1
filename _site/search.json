@@ -4,14 +4,14 @@
     "href": "index.html",
     "title": "Billboard Charts Analysis",
     "section": "",
-    "text": "charts %&gt;%\n  arrange(desc(`weeks-on-board`)) %&gt;%\n  slice_max(`weeks-on-board`, n = 10) %&gt;%\n  ggplot(aes(x = reorder(song, `weeks-on-board`), y = `weeks-on-board`, fill = artist)) +\n  geom_col() +\n  coord_flip() +\n  labs(title = \"Top 10 Songs by Weeks on Chart\",\n       x = \"Song\", y = \"Weeks on Chart\",\n       caption = \"This chart shows the top 10 songs by weeks on the chart, ordered from highest to lowest. Each bar represents the number of weeks a song has spent on the chart, with colors indicating the artist.\") +\n  theme_minimal()"
+    "text": "# Identify top 5 artists by song count\ntop_artists &lt;- charts %&gt;%\n  count(artist, sort = TRUE) %&gt;%\n  slice_max(n, n = 10) %&gt;%\n  pull(artist)\n\n# Filter original data for those artists\ncharts %&gt;%\n  filter(artist %in% top_artists) %&gt;%\n  ggplot(aes(x = rank, y = song)) +\n  geom_bin2d(bins = 70) +\n  scale_fill_viridis_c() +\n  theme_bw()"
   },
   {
     "objectID": "about.html",
     "href": "about.html",
     "title": "About",
     "section": "",
-    "text": "About me Aleks Galstyan"
+    "text": "1 Introduction\nOn this site, an analysis of the Billboard charts was conducted using historical data.\nThe results of the study are presented through clear and informative graphs, highlighting trends and changes over time.\n\n\n2 Methodology\nThe analysis followed these main steps:\n\nCollecting Billboard chart data for a selected time period\n\nPreprocessing the data (cleaning, normalization)\n\nVisualizing the results using graphs\n\n\n\n3 Results\nThe graphs below illustrate key findings of the analysis.\nThey help trace the evolution of musical preferences, as well as the popularity of different genres and artists over time.\n\n\n4 Conclusion\nThis analysis provided valuable insights into the development of the music industry and listener preferences, based on Billboard chart data."
   },
   {
     "objectID": "billieelish.html",

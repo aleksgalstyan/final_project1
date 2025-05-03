@@ -1,6 +1,32 @@
 ---
 title: "About"
+author: "Aleks Galstyan"
+format: html
+toc: true
+toc-title: "Table of Contents"
+number-sections: true
 ---
 
-About me
-Aleks Galstyan
+# Introduction
+
+On this site, an analysis of the **Billboard** charts was conducted using historical data.  
+The results of the study are presented through clear and informative **graphs**, highlighting trends and changes over time.
+
+# Methodology
+
+The analysis followed these main steps:
+
+- Collecting Billboard chart data for a selected time period  
+- Preprocessing the data (cleaning, normalization)  
+- Visualizing the results using graphs  
+
+# Results
+
+The graphs below illustrate key findings of the analysis.  
+They help trace the evolution of musical preferences, as well as the popularity of different genres and artists over time.
+
+# Conclusion
+
+This analysis provided valuable insights into the development of the music industry and listener preferences, based on Billboard chart data.
+
+---
