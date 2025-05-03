@@ -1,0 +1,74 @@
+---
+title: "Billie Eilish: Interactive Chart Analysis"
+format: html
+editor: visual
+---
+
+```{r setup, include=FALSE}
+
+library(tidyverse)
+library(readr)
+library(plotly)
+
+charts <- read_csv("~/Desktop/final_project1/data/charts.csv")
+
+billie <- charts %>%
+  filter(artist == "Billie Eilish")
+```
+
+```{r}
+#| echo: false
+ggplot(billie, aes(x = as.Date(date), y = rank, color = song)) +
+  geom_line(linewidth = 0.5) +
+  scale_y_reverse() +
+  labs(title = "Billie Eilish: Song Rank Over Time",
+       x = "Date", y = "Chart Rank", color = "Song") 
+  
+
+```
+
+```{r}
+#| echo: false
+
+ggplot(billie, aes(x = as.Date(date), y = song, fill = rank)) +
+  geom_tile() +
+  scale_fill_viridis_c(option = "plasma", direction = -1) +
+  labs(title = "Billie Eilish: Heatmap of Songs Over Time",
+       x = "Date", y = "Song", fill = "Rank") +
+  theme_minimal()
+
+
+```
+
+```{}
+```
+
+```{r}
+#| echo: false
+billie_weeks <- billie %>%
+  group_by(song) %>%
+  summarise(total_weeks = n()) %>%
+  arrange(desc(total_weeks))
+
+ggplot(billie_weeks, aes(x = reorder(song, total_weeks), y = total_weeks, fill = song)) +
+  geom_col(show.legend = FALSE) +
+  coord_flip() +
+  labs(title = "Billie Eilish: Total Weeks on Chart by Song",
+       x = "Song", y = "Weeks on Chart") +
+  theme_minimal()
+
+```
+
+```{r}
+#| echo: false
+library(plotly)
+p3 <- ggplot(billie, aes(x = song, y = rank, fill = song)) +
+  geom_boxplot(show.legend = FALSE) +
+  scale_y_reverse() +
+  labs(title = "Billie Eilish: Rank Distribution by Song",
+       x = "Song", y = "Rank") +
+  theme_minimal()
+
+ggplotly(p3)
+
+```

@@ -7,6 +7,10 @@ website:
     left:
       - href: index.qmd
         text: Home
+      - href: billieelish.qmd
+        text: Billie Elish
+      - href: weeknd.qmd
+        text: The Weeknd
       - about.qmd
 
 format:

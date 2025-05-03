@@ -1,28 +1,61 @@
 ---
-title: "My First Website"
-execute: 
-  echo: false
+title: "Billboard Charts Analysis"
+format: html
+editor: visual
 ---
 
-```{r}
+```{r setup, include=FALSE}
 library(tidyverse)
-library(tidyr)
-library(dplyr)
+library(readr)
+charts <- read_csv("~/Desktop/final_project1/data/charts.csv")
 
-#| label: diamonds-plot
+
+```
+```{r}
 #| echo: false
-charts <- read_csv("~/Desktop/FinalWebsite-main/data/charts.csv")
+
+charts %>%
+  arrange(desc(`weeks-on-board`)) %>%
+  slice_max(`weeks-on-board`, n = 10) %>%
+  ggplot(aes(x = reorder(song, `weeks-on-board`), y = `weeks-on-board`, fill = artist)) +
+  geom_col() +
+  coord_flip() +
+  labs(title = "Top 10 Songs by Weeks on Chart",
+       x = "Song", y = "Weeks on Chart") +
+  theme_minimal()
+
 ```
+
 
 ```{r}
+#| echo: false
+top_artists <- charts %>%
+  count(artist, sort = TRUE) %>%
+  slice_max(n, n = 5) %>%
+  pull(artist)
 
-library(tidyverse)
-library(tidyr)
-library(dplyr)
+charts %>%
+  filter(artist %in% top_artists) %>%
+  ggplot(aes(x = artist, y = rank, fill = artist)) +
+  geom_boxplot() +
+  scale_y_reverse() +
+  labs(title = "Rank Distribution for Top 5 Artists",
+       x = "Artist", y = "Rank") +
+  theme_minimal()
 
-charts |>
-  filter(rank < 10) |>
-  ggplot(aes(x = artist, y = song)) +
-  geom_boxplot() 
-  
+
+
 ```
+```{r}
+#| echo: false
+charts %>%
+  filter(song == "Poker Face") %>%
+  ggplot(aes(x = as.Date(date), y = rank)) +
+  geom_line(color = "darkgreen", linewidth = 1) +
+  scale_y_reverse() +
+  labs(title = "Chart Rank Over Time: Poker Face",
+       x = "Date", y = "Rank") +
+  theme_light()
+
+```
+

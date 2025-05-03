@@ -1,0 +1,41 @@
+---
+title: "The Weeknd: Chart Performance Analysis"
+format: html
+editor: visual
+---
+
+```{r setup, include=FALSE}
+library(tidyverse)
+library(readr)
+library(plotly)
+
+
+charts <- read_csv("~/Desktop/final_project1/data/charts.csv")
+weeknd <- charts %>%
+  filter(artist == "The Weeknd")
+```
+
+```{r}
+#| echo: false
+
+p1 <- ggplot(weeknd, aes(x = as.Date(date), y = rank, color = song)) +
+  geom_line(linewidth = 1) +
+  scale_y_reverse() +
+  labs(title = "The Weeknd: Song Rank Over Time",
+       x = "Date", y = "Chart Rank", color = "Song") +
+  theme_minimal()
+
+ggplotly(p1)
+
+
+```
+
+```{r}
+#| echo: false
+ggplot(weeknd, aes(x = rank, y = song, fill = song)) +
+  geom_boxplot(show.legend = FALSE) +
+  labs(title = "The Weekndx: Rank Distribution by Song",
+       y = "Song", x = "Chart Rank") +
+  theme_minimal()
+
+```
