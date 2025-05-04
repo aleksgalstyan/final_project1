@@ -25,7 +25,7 @@ weeknd <- charts %>%
 #| echo: false
 
 p1 <- ggplot(weeknd, aes(x = as.Date(date), y = rank, color = song)) +
-  geom_line(linewidth = 1) +
+  geom_line(linewidth = 0.5) +
   scale_y_reverse() +
   labs(
        x = "Date", y = "Chart Rank", color = "Song") +
