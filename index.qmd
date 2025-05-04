@@ -4,6 +4,14 @@ format: html
 editor: visual
 ---
 
+**The Billboard** Hot 100 is the music industry standard record chart in the United States for songs, published weekly by Billboard magazine. Chart rankings are based on sales, radio play, and online streaming in the **United States**.
+
+Every week, [Billboard](https://www.billboard.com/) releases "The Hot 100" chart of songs that were trending on sales and airplay for that week. This dataset is a collection of all **"The Hot 100"** charts released since its inception in *1958*.
+
+# Top 10 Songs by Weeks on Chart
+
+This plot presents the **top 10 songs ranked by the number of weeks they remained on the chart**. Each song is likely represented as a **bar** (if it's a bar chart), with the **length or height of the bar corresponding to the total number of weeks** the song stayed on the chart.
+
 ```{r setup, include=FALSE}
 library(tidyverse)
 library(readr)
@@ -24,11 +32,15 @@ charts %>%
   ggplot(aes(x = reorder(song, `weeks-on-board`), y = `weeks-on-board`, fill = artist)) +
   geom_col() +
   coord_flip() +
-  labs(title = "Top 10 Songs by Weeks on Chart",
+  labs(
        x = "Song", y = "Weeks on Chart") +
   theme_minimal()
 
 ```
+
+# Rank Distribution for Top 5 Artists
+
+This plot illustrates the **rank distribution** of songs for the **top 5 artists**. It highlights the relative success of each artist's songs across different chart positions.
 
 ```{r}
 #| echo: false
@@ -42,7 +54,7 @@ charts %>%
   ggplot(aes(x = artist, y = rank, fill = artist)) +
   geom_boxplot() +
   scale_y_reverse() +
-  labs(title = "Rank Distribution for Top 5 Artists",
+  labs(title = "",
        x = "Artist", y = "Rank") +
   theme(legend.position = "none")
 
@@ -50,7 +62,9 @@ charts %>%
 
 ```
 
-![](http://127.0.0.1:12055/chunk_output/B3C0879B968d8387/4C9A947E/cav7nlmeknx41/00002f.png)
+# Rank Distribution of Top 10 Artists
+
+This plot illustrates the **rank distribution** of songs for the **top 10 artists**. It highlights the relative success of each artist's songs across different chart positions.
 
 ```{r}
 #| echo: false
@@ -64,7 +78,7 @@ violin_plot <- charts %>%
   ggplot(aes(x = artist, y = rank, fill = artist, color = artist)) +
   geom_violin(trim = FALSE) +
   scale_y_reverse() +
-  labs(title = "Rank Distribution of Top 10 Artists", x = "Artist", y = "Rank") +
+  labs(x = "Artist", y = "Rank") +
   theme_minimal() +
   theme(legend.position = "none",axis.text.x = element_text(angle = 75,hjust = 1))
 

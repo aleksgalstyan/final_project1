@@ -79,7 +79,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">Billboard Charts</span>
+    <span class="navbar-title"><span class="txt"><span class="red-text">B</span>illboard <span class="red-text">C</span>harts</span></span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -92,14 +92,25 @@ ul.task-list li input[type="checkbox"] {
     <a class="nav-link active" href="./index.html" aria-current="page"> 
 <span class="menu-text">Home</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./billieelish.html"> 
-<span class="menu-text">Billie Elish</span></a>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-artist-analysis" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Artist analysis</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-artist-analysis">    
+        <li>
+    <a class="dropdown-item" href="./billieelish.html">
+ <span class="dropdown-text">Billie Elish</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./weeknd.html"> 
-<span class="menu-text">The Weeknd</span></a>
+        <li>
+    <a class="dropdown-item" href="./weeknd.html">
+ <span class="dropdown-text">The Weeknd</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="./ladygaga.html">
+ <span class="dropdown-text">Lady Gaga</span></a>
+  </li>  
+    </ul>
+  </li>
   <li class="nav-item">
     <a class="nav-link" href="./about.html"> 
 <span class="menu-text">About</span></a>
@@ -115,8 +126,16 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#top-10-songs-by-weeks-on-chart" id="toc-top-10-songs-by-weeks-on-chart" class="nav-link active" data-scroll-target="#top-10-songs-by-weeks-on-chart">Top 10 Songs by Weeks on Chart</a></li>
+  <li><a href="#rank-distribution-for-top-5-artists" id="toc-rank-distribution-for-top-5-artists" class="nav-link" data-scroll-target="#rank-distribution-for-top-5-artists">Rank Distribution for Top 5 Artists</a></li>
+  <li><a href="#rank-distribution-of-top-10-artists" id="toc-rank-distribution-of-top-10-artists" class="nav-link" data-scroll-target="#rank-distribution-of-top-10-artists">Rank Distribution of Top 10 Artists</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -140,6 +159,11 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<p><strong>The Billboard</strong> Hot 100 is the music industry standard record chart in the United States for songs, published weekly by Billboard magazine. Chart rankings are based on sales, radio play, and online streaming in the <strong>United States</strong>.</p>
+<p>Every week, <a href="https://www.billboard.com/">Billboard</a> releases “The Hot 100” chart of songs that were trending on sales and airplay for that week. This dataset is a collection of all <strong>“The Hot 100”</strong> charts released since its inception in <em>1958</em>.</p>
+<section id="top-10-songs-by-weeks-on-chart" class="level1">
+<h1>Top 10 Songs by Weeks on Chart</h1>
+<p>This plot presents the <strong>top 10 songs ranked by the number of weeks they remained on the chart</strong>. Each song is likely represented as a <strong>bar</strong> (if it’s a bar chart), with the <strong>length or height of the bar corresponding to the total number of weeks</strong> the song stayed on the chart.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div>
@@ -149,6 +173,10 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </div>
+</section>
+<section id="rank-distribution-for-top-5-artists" class="level1">
+<h1>Rank Distribution for Top 5 Artists</h1>
+<p>This plot illustrates the <strong>rank distribution</strong> of songs for the <strong>top 5 artists</strong>. It highlights the relative success of each artist’s songs across different chart positions.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div>
@@ -158,7 +186,10 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </div>
-<p><img src="http://127.0.0.1:12055/chunk_output/B3C0879B968d8387/4C9A947E/cav7nlmeknx41/00002f.png" class="img-fluid"></p>
+</section>
+<section id="rank-distribution-of-top-10-artists" class="level1">
+<h1>Rank Distribution of Top 10 Artists</h1>
+<p>This plot illustrates the <strong>rank distribution</strong> of songs for the <strong>top 10 artists</strong>. It highlights the relative success of each artist’s songs across different chart positions.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div>
@@ -170,6 +201,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

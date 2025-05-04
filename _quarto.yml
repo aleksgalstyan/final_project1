@@ -2,20 +2,24 @@ project:
   type: website
 
 website:
-  title: "Billboard Charts"
+  title: <span class = "txt"><span class="red-text">B</span>illboard <span class="red-text">C</span>harts</span>
   navbar:
     left:
       - href: index.qmd
         text: Home
-      - href: billieelish.qmd
-        text: Billie Elish
-      - href: weeknd.qmd
-        text: The Weeknd
+      - text: Artist analysis
+        menu:
+          - href: billieelish.qmd
+            text: Billie Elish
+          - href: weeknd.qmd
+            text: The Weeknd
+          - href: ladygaga.qmd
+            text: Lady Gaga
       - about.qmd
 
 format:
   html:
-    theme: cosmo
+    theme: lux
     css: styles.css
     toc: true
 

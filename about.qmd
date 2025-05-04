@@ -12,13 +12,6 @@ number-sections: true
 On this site, an analysis of the **Billboard** charts was conducted using historical data.  
 The results of the study are presented through clear and informative **graphs**, highlighting trends and changes over time.
 
-# Methodology
-
-The analysis followed these main steps:
-
-- Collecting Billboard chart data for a selected time period  
-- Preprocessing the data (cleaning, normalization)  
-- Visualizing the results using graphs  
 
 # Results
 
@@ -28,5 +21,12 @@ They help trace the evolution of musical preferences, as well as the popularity 
 # Conclusion
 
 This analysis provided valuable insights into the development of the music industry and listener preferences, based on Billboard chart data.
+
+# Sources
+
+The main source was the **Billboard charts** database, which was publicly available, and *ChatGpt* was also used to create charts and analyze the database.
+
+**Dataset**: https://www.kaggle.com/datasets/dhruvildave/billboard-the-hot-100-songs
+
 
 ---

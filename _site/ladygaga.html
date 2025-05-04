@@ -6,9 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Aleks Galstyan">
 
-<title>About – Billboard Charts</title>
+<title>Lady Gaga: Chart Analysis – Billboard Charts</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -67,6 +66,15 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<link href="site_libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet">
+<script src="site_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+<script src="site_libs/plotly-binding-4.10.4/plotly.js"></script>
+<script src="site_libs/typedarray-0.1/typedarray.min.js"></script>
+<script src="site_libs/jquery-3.5.1/jquery.min.js"></script>
+<link href="site_libs/crosstalk-1.2.1/css/crosstalk.min.css" rel="stylesheet">
+<script src="site_libs/crosstalk-1.2.1/js/crosstalk.min.js"></script>
+<link href="site_libs/plotly-htmlwidgets-css-2.11.1/plotly-htmlwidgets.css" rel="stylesheet">
+<script src="site_libs/plotly-main-2.11.1/plotly-latest.min.js"></script>
 
 
 <link rel="stylesheet" href="styles.css">
@@ -113,7 +121,7 @@ ul.task-list li input[type="checkbox"] {
     </ul>
   </li>
   <li class="nav-item">
-    <a class="nav-link active" href="./about.html" aria-current="page"> 
+    <a class="nav-link" href="./about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
 </ul>
@@ -129,13 +137,12 @@ ul.task-list li input[type="checkbox"] {
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of Contents</h2>
+    <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">1</span> Introduction</a></li>
-  <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results"><span class="header-section-number">2</span> Results</a></li>
-  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion"><span class="header-section-number">3</span> Conclusion</a></li>
-  <li><a href="#sources" id="toc-sources" class="nav-link" data-scroll-target="#sources"><span class="header-section-number">4</span> Sources</a></li>
+  <li><a href="#total-weeks-on-chart-per-song" id="toc-total-weeks-on-chart-per-song" class="nav-link active" data-scroll-target="#total-weeks-on-chart-per-song">Total Weeks on Chart per Song</a></li>
+  <li><a href="#best-peak-rank-per-song" id="toc-best-peak-rank-per-song" class="nav-link" data-scroll-target="#best-peak-rank-per-song">Best Peak Rank per Song</a></li>
+  <li><a href="#number-of-chart-entries-per-year" id="toc-number-of-chart-entries-per-year" class="nav-link" data-scroll-target="#number-of-chart-entries-per-year">Number of Chart Entries per Year</a></li>
   </ul>
 </nav>
     </div>
@@ -144,19 +151,13 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">About</h1>
+<h1 class="title">Lady Gaga: Chart Analysis</h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Aleks Galstyan </p>
-          </div>
-  </div>
     
   
     
@@ -167,25 +168,42 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="introduction" class="level1" data-number="1">
-<h1 data-number="1"><span class="header-section-number">1</span> Introduction</h1>
-<p>On this site, an analysis of the <strong>Billboard</strong> charts was conducted using historical data.<br>
-The results of the study are presented through clear and informative <strong>graphs</strong>, highlighting trends and changes over time.</p>
+<p><strong>Lady Gaga</strong> (Stefani Germanotta) is an American singer, songwriter, and actress known for her bold fashion, powerful vocals, and hits like “Poker Face” and “Bad Romance”. She gained fame with The Fame (2008) and has since released albums across pop, jazz, and electronic genres. Gaga is also an Oscar-winning actress, celebrated for her role in A Star Is Born (2018).</p>
+<section id="total-weeks-on-chart-per-song" class="level1">
+<h1>Total Weeks on Chart per Song</h1>
+<p>This bar chart shows the <strong>total number of weeks</strong> each song by <strong>Lady Gaga</strong> spent on the <strong>Billboard Hot 100</strong>.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="ladygaga_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
 </section>
-<section id="results" class="level1" data-number="2">
-<h1 data-number="2"><span class="header-section-number">2</span> Results</h1>
-<p>The graphs below illustrate key findings of the analysis.<br>
-They help trace the evolution of musical preferences, as well as the popularity of different genres and artists over time.</p>
+<section id="best-peak-rank-per-song" class="level1">
+<h1>Best Peak Rank per Song</h1>
+<p>This chart displays the <strong>highest (peak) Billboard Hot 100 position</strong> that each of Lady Gaga’s songs achieved.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="ladygaga_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
 </section>
-<section id="conclusion" class="level1" data-number="3">
-<h1 data-number="3"><span class="header-section-number">3</span> Conclusion</h1>
-<p>This analysis provided valuable insights into the development of the music industry and listener preferences, based on Billboard chart data.</p>
-</section>
-<section id="sources" class="level1" data-number="4">
-<h1 data-number="4"><span class="header-section-number">4</span> Sources</h1>
-<p>The main source was the <strong>Billboard charts</strong> database, which was publicly available, and <em>ChatGpt</em> was also used to create charts and analyze the database.</p>
-<p><strong>Dataset</strong>: https://www.kaggle.com/datasets/dhruvildave/billboard-the-hot-100-songs</p>
-<hr>
+<section id="number-of-chart-entries-per-year" class="level1">
+<h1>Number of Chart Entries per Year</h1>
+<p>This bar chart displays the <strong>number of unique songs by Lady Gaga</strong> that entered the <strong>Billboard Hot 100 chart</strong> each year.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="plotly html-widget html-fill-item" id="htmlwidget-5823a3bc3f839001164f" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-5823a3bc3f839001164f">{"x":{"data":[{"orientation":"v","width":[0.89999999999999991,0.90000000000000013,0.90000000000000036,0.90000000000000036,0.90000000000000036,0.90000000000000036,0.90000000000000036,0.89999999999999947,0.89999999999999858,0.89999999999999858,0.89999999999999858,0.89999999999999858],"base":[0,0,0,0,0,0,0,0,0,0,0,0],"x":[1,2,3,4,5,6,7,8,9,10,11,12],"y":[19,123,93,79,6,29,17,14,29,25,37,33],"text":["factor(year): 2008<br />n:  19","factor(year): 2009<br />n: 123","factor(year): 2010<br />n:  93","factor(year): 2011<br />n:  79","factor(year): 2012<br />n:   6","factor(year): 2013<br />n:  29","factor(year): 2014<br />n:  17","factor(year): 2016<br />n:  14","factor(year): 2017<br />n:  29","factor(year): 2018<br />n:  25","factor(year): 2019<br />n:  37","factor(year): 2020<br />n:  33"],"type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(135,206,235,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null}],"layout":{"margin":{"t":26.228310502283108,"r":7.3059360730593621,"b":40.182648401826498,"l":43.105022831050235},"plot_bgcolor":"rgba(235,235,235,1)","paper_bgcolor":"rgba(255,255,255,1)","font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[0.40000000000000002,12.6],"tickmode":"array","ticktext":["2008","2009","2010","2011","2012","2013","2014","2016","2017","2018","2019","2020"],"tickvals":[1,2,3,4.0000000000000009,5,6,7.0000000000000009,8,9,10,11,12],"categoryorder":"array","categoryarray":["2008","2009","2010","2011","2012","2013","2014","2016","2017","2018","2019","2020"],"nticks":null,"ticks":"outside","tickcolor":"rgba(51,51,51,1)","ticklen":3.6529680365296811,"tickwidth":0.66417600664176002,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.68949771689498},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(255,255,255,1)","gridwidth":0.66417600664176002,"zeroline":false,"anchor":"y","title":{"text":"Year","font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724}},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-6.1500000000000004,129.15000000000001],"tickmode":"array","ticktext":["0","25","50","75","100","125"],"tickvals":[0,25,50,75,100,125],"categoryorder":"array","categoryarray":["0","25","50","75","100","125"],"nticks":null,"ticks":"outside","tickcolor":"rgba(51,51,51,1)","ticklen":3.6529680365296811,"tickwidth":0.66417600664176002,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.68949771689498},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(255,255,255,1)","gridwidth":0.66417600664176002,"zeroline":false,"anchor":"x","title":{"text":"Entries","font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724}},"hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0,"x1":1,"y0":0,"y1":1}],"showlegend":false,"legend":{"bgcolor":"rgba(255,255,255,1)","bordercolor":"transparent","borderwidth":1.8897637795275593,"font":{"color":"rgba(0,0,0,1)","family":"","size":11.68949771689498}},"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"source":"A","attrs":{"fbed14ae4e63":{"x":{},"y":{},"type":"bar"}},"cur_data":"fbed14ae4e63","visdat":{"fbed14ae4e63":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
 
 
 </section>

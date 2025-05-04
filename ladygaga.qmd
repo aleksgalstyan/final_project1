@@ -1,0 +1,74 @@
+---
+title: "Lady Gaga: Chart Analysis"
+format: html
+editor: visual
+---
+
+**Lady Gaga** (Stefani Germanotta) is an American singer, songwriter, and actress known for her bold fashion, powerful vocals, and hits like "Poker Face" and "Bad Romance". She gained fame with The Fame (2008) and has since released albums across pop, jazz, and electronic genres. Gaga is also an Oscar-winning actress, celebrated for her role in A Star Is Born (2018).
+
+# Total Weeks on Chart per Song
+
+This bar chart shows the **total number of weeks** each song by **Lady Gaga** spent on the **Billboard Hot 100**.
+
+```{r setup, include=FALSE}
+library(tidyverse)
+library(lubridate)
+library(scales)
+library(patchwork)
+library(plotly)
+df <- read_csv("~/Desktop/data/charts.csv")
+gaga_df <- df %>%
+  filter(str_detect(artist, regex("Lady Gaga", ignore_case = TRUE))) %>%
+  mutate(date = ymd(date), year = year(date))
+```
+
+```{r}
+#| echo: false
+g1 <- gaga_df %>%
+  group_by(song) %>%
+  summarise(max_weeks = max(`weeks-on-board`, na.rm = TRUE)) %>%
+  arrange(desc(max_weeks)) %>%
+  ggplot(aes(x = reorder(song, max_weeks), y = max_weeks)) +
+  geom_col(fill = "mediumpurple") +
+  coord_flip() +
+  labs( x = "Song", y = "Weeks")
+
+g2 <- gaga_df %>%
+  group_by(song) %>%
+  summarise(best_peak = min(`peak-rank`, na.rm = TRUE)) %>%
+  arrange(best_peak) %>%
+  ggplot(aes(x = reorder(song, best_peak), y = best_peak)) +
+  geom_col(fill = "salmon") +
+  coord_flip() +
+  labs( x = "Song", y = "Peak Rank")
+
+g3 <- gaga_df %>%
+  count(year) %>%
+  ggplot(aes(x = factor(year), y = n)) +
+  geom_col(fill = "skyblue") +
+  labs(title = "", x = "Year", y = "Entries")
+
+
+
+g1
+
+```
+
+# Best Peak Rank per Song
+
+This chart displays the **highest (peak) Billboard Hot 100 position** that each of Lady Gaga's songs achieved.
+
+```{r}
+#| echo: false
+g2
+
+```
+
+# Number of Chart Entries per Year
+
+This bar chart displays the **number of unique songs by Lady Gaga** that entered the **Billboard Hot 100 chart** each year.
+
+```{r}
+#| echo: false
+ggplotly(g3)
+```

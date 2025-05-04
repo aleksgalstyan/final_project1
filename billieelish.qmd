@@ -1,8 +1,14 @@
 ---
-title: "Billie Eilish: Interactive Chart Analysis"
+title: "Billie Eilish: Chart Analysis"
 format: html
 editor: visual
 ---
+
+**Billie Eilish** is an American singer, songwriter, and performer known for her unique sound, dark aesthetic, and emotionally raw lyrics. She rose to fame in 2015 at the age of 13 with her breakout song **“Ocean Eyes,”** which she released on SoundCloud and which quickly went viral. Her full name is **Billie Eilish Pirate Baird O’Connell**, and she was born on **December 18, 2001**, in Los Angeles, California.
+
+# Billie Eilish: Song Rank Over Time
+
+This plot visualizes the performance of Billie Eilish’s songs on the **Billboard Hot 100** over time.
 
 ```{r setup, include=FALSE}
 
@@ -21,11 +27,15 @@ billie <- charts %>%
 ggplot(billie, aes(x = as.Date(date), y = rank, color = song)) +
   geom_line(linewidth = 0.5) +
   scale_y_reverse() +
-  labs(title = "Billie Eilish: Song Rank Over Time",
+  labs(
        x = "Date", y = "Chart Rank", color = "Song") 
   
 
 ```
+
+# Billie Eilish: Heatmap of Songs Over Time
+
+This heatmap visualizes the **Billboard chart activity** of Billie Eilish’s songs **week by week over time.**
 
 ```{r}
 #| echo: false
@@ -33,15 +43,16 @@ ggplot(billie, aes(x = as.Date(date), y = rank, color = song)) +
 ggplot(billie, aes(x = as.Date(date), y = song, fill = rank)) +
   geom_tile() +
   scale_fill_viridis_c(option = "plasma", direction = -1) +
-  labs(title = "Billie Eilish: Heatmap of Songs Over Time",
+  labs(
        x = "Date", y = "Song", fill = "Rank") +
   theme_minimal()
 
 
 ```
 
-```         
-```
+# Billie Eilish: Total Weeks on Chart by Song
+
+This bar chart displays how many **total weeks** each Billie Eilish song spent on the **Billboard Hot 100** chart.
 
 ```{r}
 #| echo: false
@@ -53,11 +64,15 @@ billie_weeks <- billie %>%
 ggplot(billie_weeks, aes(x = reorder(song, total_weeks), y = total_weeks, fill = song)) +
   geom_col(show.legend = FALSE) +
   coord_flip() +
-  labs(title = "Billie Eilish: Total Weeks on Chart by Song",
+  labs(
        x = "Song", y = "Weeks on Chart") +
   theme_minimal()
 
 ```
+
+# Billie Eilish: Rank Distribution by Song
+
+This chart visualizes the **distribution of chart rankings** for each Billie Eilish song on the **Billboard Hot 100** over its lifetime.
 
 ```{r}
 #| echo: false
@@ -65,9 +80,9 @@ library(plotly)
 p3 <- ggplot(billie, aes(x = song, y = rank, fill = song)) +
   geom_boxplot(show.legend = FALSE) +
   scale_y_reverse() +
-  labs(title = "Billie Eilish: Rank Distribution by Song",
+  labs(
        x = "Song", y = "Rank") +
-  theme_minimal()
+  theme(legend.position = "none",axis.text.x = element_text(angle = 75,hjust = 1))
 
 ggplotly(p3)
 
