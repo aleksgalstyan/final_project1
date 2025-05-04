@@ -10,7 +10,7 @@ library(readr)
 library(forcats)
 library(patchwork)
 library(gridExtra)
-charts <- read_csv("~/Desktop/final_project1/data/charts.csv")
+charts <- read_csv("~/Desktop/data/charts.csv")
 
 
 ```
@@ -44,7 +44,7 @@ charts %>%
   scale_y_reverse() +
   labs(title = "Rank Distribution for Top 5 Artists",
        x = "Artist", y = "Rank") +
-  theme(legend.position = "none",axis.text.x = element_text(angle = 75,hjust = 1))
+  theme(legend.position = "none")
 
 
 

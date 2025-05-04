@@ -10,7 +10,7 @@ library(tidyverse)
 library(readr)
 library(plotly)
 
-charts <- read_csv("~/Desktop/final_project1/data/charts.csv")
+charts <- read_csv("~/Desktop/data/charts.csv")
 
 billie <- charts %>%
   filter(artist == "Billie Eilish")
@@ -40,7 +40,7 @@ ggplot(billie, aes(x = as.Date(date), y = song, fill = rank)) +
 
 ```
 
-```{}
+```         
 ```
 
 ```{r}

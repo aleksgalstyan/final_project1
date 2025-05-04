@@ -10,7 +10,7 @@ library(readr)
 library(plotly)
 
 
-charts <- read_csv("~/Desktop/final_project1/data/charts.csv")
+charts <- read_csv("~/Desktop/data/charts.csv")
 weeknd <- charts %>%
   filter(artist == "The Weeknd")
 ```
