@@ -26,7 +26,7 @@ This analysis provided valuable insights into the development of the music indus
 
 The main source was the **Billboard charts** database, which was publicly available, and *ChatGpt* was also used to create charts and analyze the database.
 
-**Dataset**: https://www.kaggle.com/datasets/dhruvildave/billboard-the-hot-100-songs
+**Dataset**: [https://www.kaggle.com/datasets/dhruvildave/billboard-the-hot-100-songs](billboard-the-hot-100-songs)
 
 
 ---

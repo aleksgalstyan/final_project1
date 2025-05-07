@@ -32,27 +32,34 @@ g1 <- gaga_df %>%
   geom_col(fill = "mediumpurple") +
   coord_flip() +
   labs( x = "Song", y = "Weeks")
-
+```
+ 
+```{r}
+#| echo: false
 g2 <- gaga_df %>%
   group_by(song) %>%
   summarise(best_peak = min(`peak-rank`, na.rm = TRUE)) %>%
   arrange(best_peak) %>%
   ggplot(aes(x = reorder(song, best_peak), y = best_peak)) +
   geom_col(fill = "salmon") +
-  coord_flip() +
+  coord_flip() + scale_y_reverse() +
   labs( x = "Song", y = "Peak Rank")
-
+```
+```{r}
+#| echo: false
 g3 <- gaga_df %>%
   count(year) %>%
   ggplot(aes(x = factor(year), y = n)) +
   geom_col(fill = "skyblue") +
   labs(title = "", x = "Year", y = "Entries")
+```
 
-
-
+```{r}
+#| echo: false
 g1
 
 ```
+**Just Dance** stayed in the charts the longest time,50 weeks. 
 
 # Best Peak Rank per Song
 
@@ -63,6 +70,7 @@ This chart displays the **highest (peak) Billboard Hot 100 position** that each 
 g2
 
 ```
+The highest rank song is **Born this way**
 
 # Number of Chart Entries per Year
 
@@ -72,3 +80,4 @@ This bar chart displays the **number of unique songs by Lady Gaga** that entered
 #| echo: false
 ggplotly(g3)
 ```
+The most popular time coincides with the year **2009**

@@ -33,6 +33,10 @@ ggplotly(p1)
 
 ```
 
+**The highest rank song is *Bad Guy* **
+
+------------------------------------------------------------------------
+
 # Billie Eilish: Heatmap of Songs Over Time
 
 This heatmap visualizes the **Billboard chart activity** of Billie Eilish’s songs **week by week over time.**
@@ -49,7 +53,9 @@ ggplot(billie, aes(x = as.Date(date), y = song, fill = rank)) +
 
 
 ```
+The most popular time coincides with the year *2019-2020*
 
+------------------------------------------------------------------------
 # Billie Eilish: Total Weeks on Chart by Song
 
 This bar chart displays how many **total weeks** each Billie Eilish song spent on the **Billboard Hot 100** chart.
@@ -70,20 +76,4 @@ ggplot(billie_weeks, aes(x = reorder(song, total_weeks), y = total_weeks, fill =
 
 ```
 
-# Billie Eilish: Rank Distribution by Song
 
-This chart visualizes the **distribution of chart rankings** for each Billie Eilish song on the **Billboard Hot 100** over its lifetime.
-
-```{r}
-#| echo: false
-library(plotly)
-p3 <- ggplot(billie, aes(x = song, y = rank, fill = song)) +
-  geom_boxplot(show.legend = FALSE) +
-  scale_y_reverse() +
-  labs(
-       x = "Song", y = "Rank") +
-  theme(legend.position = "none",axis.text.x = element_text(angle = 75,hjust = 1))
-
-ggplotly(p3)
-
-```

@@ -8,9 +8,9 @@ editor: visual
 
 Every week, [Billboard](https://www.billboard.com/) releases "The Hot 100" chart of songs that were trending on sales and airplay for that week. This dataset is a collection of all **"The Hot 100"** charts released since its inception in *1958*.
 
-# Top 10 Songs by Weeks on Chart
+# Top 3 Songs by Weeks on Chart
 
-This plot presents the **top 10 songs ranked by the number of weeks they remained on the chart**. Each song is likely represented as a **bar** (if it's a bar chart), with the **length or height of the bar corresponding to the total number of weeks** the song stayed on the chart.
+This plot presents the **top 3 songs ranked by the number of weeks they remained on the chart**. Each song is likely represented as a **bar** (if it's a bar chart), with the **length or height of the bar corresponding to the total number of weeks** the song stayed on the chart.
 
 ```{r setup, include=FALSE}
 library(tidyverse)
@@ -28,8 +28,8 @@ charts <- read_csv("~/Desktop/data/charts.csv")
 
 charts %>%
   arrange(desc(`weeks-on-board`)) %>%
-  slice_max(`weeks-on-board`, n = 10) %>%
-  ggplot(aes(x = reorder(song, `weeks-on-board`), y = `weeks-on-board`, fill = artist)) +
+  slice_max(`weeks-on-board`, n = 20) %>%
+  ggplot(aes(x = reorder(song, `weeks-on-board`), y = `weeks-on-board`/100, fill = artist)) +
   geom_col() +
   coord_flip() +
   labs(
@@ -37,6 +37,10 @@ charts %>%
   theme_minimal()
 
 ```
+
+**The Weeknd's Blinding Light stayed in the charts the longest time,10 weeks.**
+
+------------------------------------------------------------------------
 
 # Rank Distribution for Top 5 Artists
 
